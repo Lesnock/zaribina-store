@@ -1,0 +1,11 @@
+{
+  "name": "zaribina",
+  "version": "1.0.0",
+  "description": "Zaribina Store's sales system",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx vitest"
+  },
+  "author": "Caio Lesnock <caio.dev@outlook.com>",
+  "license": "ISC"
+}
