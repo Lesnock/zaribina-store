@@ -7,5 +7,9 @@
     "test": "npx vitest"
   },
   "author": "Caio Lesnock <caio.dev@outlook.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.6.2",
+    "vitest": "^2.1.1"
+  }
 }
