@@ -1,4 +1,4 @@
-import { Specification } from "@/general/contracts/specification";
+import { Specification } from "../../../general/contracts/specification";
 
 export class ProductCodeSpecification implements Specification<string> {
     public isSatisfiedBy(candidate: string): boolean {

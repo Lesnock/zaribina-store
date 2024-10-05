@@ -1,5 +1,5 @@
-import { ValidationError } from "@/general/errors/ValidationError";
-import { Specification } from "@/general/contracts/specification";
+import { ValidationError } from "../../general/errors/validation-error";
+import { Specification } from "../../general/contracts/specification";
 
 export class ProductCode {
     private constructor (
