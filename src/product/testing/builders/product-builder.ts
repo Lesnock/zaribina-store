@@ -18,6 +18,16 @@ export class ProductBuilder {
         return this
     }
 
+    withInvalidCode(): ProductBuilder {
+        this.data.code = 'invalid'
+        return this
+    }
+
+    withInvalidPrice(): ProductBuilder {
+        this.data.price = -1
+        return this
+    }
+
     withPrice(price: number): ProductBuilder {
         this.data.price = price
         return this

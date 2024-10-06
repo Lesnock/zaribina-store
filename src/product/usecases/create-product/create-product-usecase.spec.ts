@@ -9,3 +9,15 @@ it('should create product', () => {
     usecase.execute(ProductBuilder.aProduct().withCode('240001').buildAsDto())
     expect(repository.findByCode('240001')).toBeTruthy()
 })
+
+it('should not create product with invalid code', () => {
+    const repository = new ProductRepositoryInMemory()
+    const usecase = new CreateProductUsecase(repository)
+    expect(usecase.execute(ProductBuilder.aProduct().withInvalidCode().buildAsDto())).rejects.toThrowError()
+})
+
+it('should not create product with invalid price', () => {
+    const repository = new ProductRepositoryInMemory()
+    const usecase = new CreateProductUsecase(repository)
+    expect(usecase.execute(ProductBuilder.aProduct().withInvalidPrice().buildAsDto())).rejects.toThrowError()
+})
