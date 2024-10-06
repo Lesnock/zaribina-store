@@ -8,7 +8,7 @@ it('should create product', () => {
     usecase.execute({
         code: '240001',
         purchase_price: 100,
-        desired_selling_price: 120,
+        price: 120,
         group_id: 1
     })
     expect(repository.findByCode('240001')).toBeTruthy()
