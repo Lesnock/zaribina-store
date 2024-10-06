@@ -5,7 +5,7 @@ import { ProductCodeSpecification } from "../../domain/specifications/product-co
 
 interface Input {
     code: string
-    purchase_price: number
+    last_purchase_price: number
     price: number
     group_id: number
 }
@@ -18,7 +18,7 @@ export class CreateProductUsecase {
     async execute(input: Input): Promise<void> {
         const product = Product.create({
             code: ProductCode.build(input.code, new ProductCodeSpecification()),
-            last_purchase_price: input.purchase_price,
+            last_purchase_price: input.last_purchase_price,
             price: input.price,
             group_id: input.group_id,
             id: null
