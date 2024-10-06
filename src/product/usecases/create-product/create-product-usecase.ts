@@ -2,6 +2,7 @@ import { Product } from "../../domain/product";
 import { ProductCode } from "../../domain/product-code";
 import { ProductRepository } from "../../repositories/contracts/product-repository";
 import { ProductCodeSpecification } from "../../domain/specifications/product-code-specification";
+import { EventBus } from "../../../general/events/event-bus";
 
 interface Input {
     code: string
@@ -12,7 +13,8 @@ interface Input {
 
 export class CreateProductUsecase {
     constructor(
-        private productRepository: ProductRepository
+        private productRepository: ProductRepository,
+        private eventBus: EventBus
     ) {}
 
     async execute(input: Input): Promise<void> {
@@ -24,5 +26,6 @@ export class CreateProductUsecase {
             id: null
         })
         await this.productRepository.save(product)
+        this.eventBus.emit('product.created', product.toDTO())
     }
 }
